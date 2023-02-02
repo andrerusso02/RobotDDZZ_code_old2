@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ddbot_run</name>
+  <name>ddzz_run</name>
   <version>0.0.0</version>
-  <description>The ddbot_run package</description>
+  <description>The ddzz_run package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/ddbot_run</url> -->
+  <!-- <url type="website">http://wiki.ros.org/ddzz_run</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
@@ -49,11 +49,11 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>ddbot_control</build_depend>
+  <build_depend>ddzz_control</build_depend>
   <build_depend>rosserial_python</build_depend>
-  <build_export_depend>ddbot_control</build_export_depend>
+  <build_export_depend>ddzz_control</build_export_depend>
   <build_export_depend>rosserial_python</build_export_depend>
-  <exec_depend>ddbot_control</exec_depend>
+  <exec_depend>ddzz_control</exec_depend>
   <exec_depend>rosserial_python</exec_depend>
 
 

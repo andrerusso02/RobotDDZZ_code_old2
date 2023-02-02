@@ -21,11 +21,11 @@ struct Joint
     { }
 };
 
-class DdbotHardware : public hardware_interface::RobotHW
+class DdzzHardware : public hardware_interface::RobotHW
 {
 
     public:
-        DdbotHardware(ros::NodeHandle& nh);
+        DdzzHardware(ros::NodeHandle& nh);
 
         void test();
 

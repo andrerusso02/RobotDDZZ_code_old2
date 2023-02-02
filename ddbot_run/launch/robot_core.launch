@@ -4,7 +4,7 @@
     <arg name="no_remote" default="false"/>
     <arg name="no_lidar" default="false"/>
 
-    <include file="$(find ddbot_control)/launch/ddbot_control.launch" pass_all_args="true"/>
+    <include file="$(find ddzz_control)/launch/ddzz_control.launch" pass_all_args="true"/>
 
     <group unless="$(arg no_lidar)">
 
@@ -16,7 +16,7 @@
 
         <machine
             name="robot"
-            address="ddbot"
+            address="ddzz"
             user="ubuntu"
             env-loader="/home/ubuntu/setup_ros.bash"
             default="never"

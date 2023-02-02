@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(ddbot_base)
+project(ddzz_base)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -105,7 +105,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   # INCLUDE_DIRS include
-  # LIBRARIES ddbot_base
+  # LIBRARIES ddzz_base
   # CATKIN_DEPENDS roscpp std_msgs
   # DEPENDS system_lib
 )
@@ -123,7 +123,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/ddbot_base.cpp
+#   src/${PROJECT_NAME}/ddzz_base.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -134,7 +134,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/ddbot_base_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/ddzz_base_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -198,7 +198,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_ddbot_base.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_ddzz_base.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
@@ -209,5 +209,5 @@ include_directories(
 ## Build nodes
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(ddbot_base src/ddbot_base.cpp src/ddbot_hardware.cpp)
-target_link_libraries(ddbot_base ${catkin_LIBRARIES})
+add_executable(ddzz_base src/ddzz_base.cpp src/ddzz_hardware.cpp)
+target_link_libraries(ddzz_base ${catkin_LIBRARIES})

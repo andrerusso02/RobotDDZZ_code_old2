@@ -1,13 +1,13 @@
-#include "ddbot_base/ddbot_hardware.h"
+#include "ddzz_base/ddzz_hardware.h"
 #include "std_msgs/Float32.h"
 
 
 
-    DdbotHardware::DdbotHardware(ros::NodeHandle& nh):nh_(nh)
+    DdzzHardware::DdzzHardware(ros::NodeHandle& nh):nh_(nh)
     {
 
 
-        ROS_INFO("Initializing ddbot Hardware Interface ..."); // todo : find why it doesn't show in rqt_console
+        ROS_INFO("Initializing ddzz Hardware Interface ..."); // todo : find why it doesn't show in rqt_console
 
         // velocities in rad/s
 
@@ -16,10 +16,10 @@
         pub_right_motor_velocity_ = nh_.advertise<std_msgs::Float32>("hardware_command/vel_r", 1);
 
         // Setup subscribers for encoders
-        sub_left_encoder_ = nh_.subscribe("hardware_feedback/vel_l", 1, &DdbotHardware::leftVelCallback, this);
-        sub_right_encoder_ = nh_.subscribe("hardware_feedback/vel_r", 1, &DdbotHardware::rightVelCallback, this);
-        sub_left_encoder_ = nh_.subscribe("hardware_feedback/pos_l", 1, &DdbotHardware::leftPosCallback, this);
-        sub_right_encoder_ = nh_.subscribe("hardware_feedback/pos_r", 1, &DdbotHardware::rightPosCallback, this);
+        sub_left_encoder_ = nh_.subscribe("hardware_feedback/vel_l", 1, &DdzzHardware::leftVelCallback, this);
+        sub_right_encoder_ = nh_.subscribe("hardware_feedback/vel_r", 1, &DdzzHardware::rightVelCallback, this);
+        sub_left_encoder_ = nh_.subscribe("hardware_feedback/pos_l", 1, &DdzzHardware::leftPosCallback, this);
+        sub_right_encoder_ = nh_.subscribe("hardware_feedback/pos_r", 1, &DdzzHardware::rightPosCallback, this);
 
 
 
@@ -50,11 +50,11 @@
         // Register the JointVelocityInterface containing the read/write joints
         registerInterface(&velocity_joint_interface_);
 
-        ROS_INFO("... Done Initializing ddbot Hardware Interface");
+        ROS_INFO("... Done Initializing ddzz Hardware Interface");
 
     }
 
-    void DdbotHardware::writeToHardware()
+    void DdzzHardware::writeToHardware()
     {
 
         double cmd_left_velocity = joints_[0].velocity_command;
@@ -72,7 +72,7 @@
         pub_right_motor_velocity_.publish(right_motor_velocity_msg);
     }
 
-    void DdbotHardware::readFromHardware()
+    void DdzzHardware::readFromHardware()
     {
         joints_[0].velocity = left_encoder_vel_;
         joints_[1].velocity = right_encoder_vel_;
@@ -82,29 +82,29 @@
 
 
 
-    void DdbotHardware::leftVelCallback(const std_msgs::Float32::ConstPtr& msg)
+    void DdzzHardware::leftVelCallback(const std_msgs::Float32::ConstPtr& msg)
     {
         left_encoder_vel_ = msg->data;
     }
 
-    void DdbotHardware::rightVelCallback(const std_msgs::Float32::ConstPtr& msg)
+    void DdzzHardware::rightVelCallback(const std_msgs::Float32::ConstPtr& msg)
     {
         right_encoder_vel_ = msg->data;
     }
 
-    void DdbotHardware::leftPosCallback(const std_msgs::Float32::ConstPtr& msg)
+    void DdzzHardware::leftPosCallback(const std_msgs::Float32::ConstPtr& msg)
     {
         left_encoder_pos_ = msg->data;
     }
 
-    void DdbotHardware::rightPosCallback(const std_msgs::Float32::ConstPtr& msg)
+    void DdzzHardware::rightPosCallback(const std_msgs::Float32::ConstPtr& msg)
     {
         right_encoder_pos_ = msg->data;
     }
 
 
-    void DdbotHardware::test()
+    void DdzzHardware::test()
     {
-        ROS_INFO("Testing ddbot Hardware Interface ...");
-        ROS_INFO("... Done Testing ddbot Hardware Interface");
+        ROS_INFO("Testing ddzz Hardware Interface ...");
+        ROS_INFO("... Done Testing ddzz Hardware Interface");
     }

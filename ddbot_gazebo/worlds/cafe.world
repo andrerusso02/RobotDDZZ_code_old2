@@ -328,7 +328,7 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='ddbot'>
+      <model name='ddzz'>
         <pose>-0.001815 -0.000393 0.1898 2e-06 -0.000941 -0.00011</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
@@ -371,7 +371,7 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='ddbot'>
+    <model name='ddzz'>
       <link name='base_link'>
         <inertial>
           <pose>0.0375 0 0.009 1.5708 -0 0</pose>
@@ -390,7 +390,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>/home/arusso/catkin_ws/src/ddbot/ddbot_description/meshes/body.stl</uri>
+              <uri>/home/arusso/catkin_ws/src/ddzz/ddzz_description/meshes/body.stl</uri>
             </mesh>
           </geometry>
           <surface>
@@ -412,7 +412,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>/home/arusso/catkin_ws/src/ddbot/ddbot_description/meshes/body.stl</uri>
+              <uri>/home/arusso/catkin_ws/src/ddzz/ddzz_description/meshes/body.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -483,7 +483,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>/home/arusso/catkin_ws/src/ddbot/ddbot_description/meshes/wheel.stl</uri>
+              <uri>/home/arusso/catkin_ws/src/ddzz/ddzz_description/meshes/wheel.stl</uri>
             </mesh>
           </geometry>
           <material>
@@ -554,7 +554,7 @@
           <geometry>
             <mesh>
               <scale>0.001 0.001 0.001</scale>
-              <uri>/home/arusso/catkin_ws/src/ddbot/ddbot_description/meshes/wheel.stl</uri>
+              <uri>/home/arusso/catkin_ws/src/ddzz/ddzz_description/meshes/wheel.stl</uri>
             </mesh>
           </geometry>
           <material>

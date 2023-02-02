@@ -1,4 +1,4 @@
-#include "ddbot_base/ddbot_hardware.h"
+#include "ddzz_base/ddzz_hardware.h"
 
 #include <controller_manager/controller_manager.h>
 #include <ros/ros.h>
@@ -8,14 +8,14 @@ int main(int argc, char *argv[])
 {
     
     // Initialize the ROS node
-    ros::init(argc, argv, "ddbot_base");
+    ros::init(argc, argv, "ddzz_base");
     ros::NodeHandle nh;
 
     // Create instance of the robot
-    DdbotHardware ddbot(nh);
+    DdzzHardware ddzz(nh);
 
     // Create an instance of the controller manager and pass it the robot, so that it can handle its resources.
-    controller_manager::ControllerManager cm(&ddbot);
+    controller_manager::ControllerManager cm(&ddzz);
 
     // Pour eviter que le demarrage du controlleur bloque la boucle principale
     ros::AsyncSpinner spinner(1);
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     {
         
         // Read the current state of the robot from the hardware
-        ddbot.readFromHardware();
+        ddzz.readFromHardware();
 
         ros::Duration period = ros::Time::now() - last_time;
 
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
         cm.update(ros::Time::now(), period);
 
         // Write the commands to the robot
-        ddbot.writeToHardware();
+        ddzz.writeToHardware();
 
         rate.sleep();
     }

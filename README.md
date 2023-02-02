@@ -20,17 +20,17 @@ SSH  : ```ssh ubuntu@ddrobot```
 Change hostname : https://www.pragmaticlinux.com/2021/05/how-to-change-the-hostname-of-your-raspberry-pi/
 
 ### Run this on each machine to share roscore
-```export ROS_MASTER_URI=http://ddbot:11311```
+```export ROS_MASTER_URI=http://ddzz:11311```
 
 ## Before launching robot nodes :
 
-Run ```$(rospack find ddbot_run)/scripts/find_usb_devices.py```
+Run ```$(rospack find ddzz_run)/scripts/find_usb_devices.py```
 
-And source ```$(rospack find ddbot_run)/scripts/set_usb_ports.bash```
+And source ```$(rospack find ddzz_run)/scripts/set_usb_ports.bash```
 
 Adding this to .bashrc may be convenient : 
 
-```test -f $(rospack find ddbot_run)/scripts/set_usb_ports.bash  && source $(rospack find ddbot_run)/scripts/set_usb_ports.bash```
+```test -f $(rospack find ddzz_run)/scripts/set_usb_ports.bash  && source $(rospack find ddzz_run)/scripts/set_usb_ports.bash```
 
 ## Setup SSH RSA keys to use launch files to run nodes on distant robot
 https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1804-fr
@@ -42,8 +42,8 @@ And place commands to init ROS in a file ```~/setup_ros.bash``` instead of ```~/
 ### In simulation
 ```roscore```
 
-```roslaunch ddbot_gazebo simulation.launch```
+```roslaunch ddzz_gazebo simulation.launch```
 
-```roslaunch ddbot_run robot_core_rviz.launch no_lidar:=true no_remote:=true sim:=true```
+```roslaunch ddzz_run robot_core_rviz.launch no_lidar:=true no_remote:=true sim:=true```
 
-```roslaunch ddbot_teleop teleop_keyboard.launch```
+```roslaunch ddzz_teleop teleop_keyboard.launch```

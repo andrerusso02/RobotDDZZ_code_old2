@@ -3,18 +3,18 @@
   <arg name="sim" default="false"/>
   <arg name="no_remote" default="false"/>
 
-  <param name="robot_description" textfile="$(find ddbot_description)/urdf/robot.urdf" />
-  <rosparam file="$(find ddbot_control)/config/ddbot_control.yaml" />
+  <param name="robot_description" textfile="$(find ddzz_description)/urdf/robot.urdf" />
+  <rosparam file="$(find ddzz_control)/config/ddzz_control.yaml" />
 
   <group if="$(arg sim)">
-    <node name="ddbot_base_controler"  pkg="controller_manager" type="spawner" args="mobile_base_controller" required="true"/>
+    <node name="ddzz_base_controler"  pkg="controller_manager" type="spawner" args="mobile_base_controller" required="true"/>
   </group>
 
   <group unless="$(arg sim)">
 
     <group if="$(arg no_remote)">
-      <node name="ddbot_base_controler"  pkg="controller_manager" type="spawner" args="mobile_base_controller" required="true"/>
-      <node name="ddbot_base"  pkg="ddbot_base" type="ddbot_base" required="true"/>
+      <node name="ddzz_base_controler"  pkg="controller_manager" type="spawner" args="mobile_base_controller" required="true"/>
+      <node name="ddzz_base"  pkg="ddzz_base" type="ddzz_base" required="true"/>
       <node pkg="rosserial_python" type="serial_node.py" name="serial_node" required="true">
         <remap from="~port" to="/peripherials_ports/arduino_wheels" />
       </node>
@@ -23,13 +23,13 @@
     <group unless="$(arg no_remote)">
         <machine
           name="robot"
-          address="ddbot"
+          address="ddzz"
           user="ubuntu"
           env-loader="/home/ubuntu/setup_ros.bash"
           default="never"
       />
-      <node name="ddbot_base_controler"  pkg="controller_manager" type="spawner" args="mobile_base_controller" required="true" machine="robot"/>
-      <node name="ddbot_base"  pkg="ddbot_base" type="ddbot_base" required="true" machine="robot"/>
+      <node name="ddzz_base_controler"  pkg="controller_manager" type="spawner" args="mobile_base_controller" required="true" machine="robot"/>
+      <node name="ddzz_base"  pkg="ddzz_base" type="ddzz_base" required="true" machine="robot"/>
       <node pkg="rosserial_python" type="serial_node.py" name="serial_node" required="true" machine="robot">
         <remap from="~port" to="/peripherials_ports/arduino_wheels" />
       </node>
